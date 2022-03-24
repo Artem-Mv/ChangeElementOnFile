@@ -16,10 +16,15 @@ public class Main {
         while (scanner.hasNextInt()) {
             numbers.add(scanner.nextInt());
         }
-
         int elem = numbers.indexOf(num); //элемент который надо заменить
+//цикл для проверки, если таких чисел>1
+        for (int i = 0; i < numbers.size(); i++){
+            if(numbers.get(i).equals(num)){
+                numbers.set(elem, num - 10);
+                elem = numbers.indexOf(num);
+            }
+        }
 
-        numbers.set(elem, num - 10); //вставляем нужное значение
 
         FileWriter fr = new FileWriter(file);
 
